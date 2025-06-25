@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using Tournament.Core.Entities;
 using Tournament.Core.Repositories;
 
@@ -78,6 +79,28 @@ namespace Tournament.Api.Controllers
                 return NotFound();
 
             await _unitOfWork.TournamentRepository.DeleteAsync(detail);
+            await _unitOfWork.CompleteAsync();
+
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchTournamentDetails(int id, [FromBody] JsonPatchDocument<TournamentDetails> patchDoc)
+        {
+            if (patchDoc == null)
+                return BadRequest();
+
+            var tournamentDetails = await _unitOfWork.TournamentRepository.GetByIdAsync(id);
+
+            if (tournamentDetails == null)
+                return NotFound();
+
+            patchDoc.ApplyTo(tournamentDetails, ModelState);
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _unitOfWork.TournamentRepository.Update(tournamentDetails);
             await _unitOfWork.CompleteAsync();
 
             return NoContent();

@@ -46,14 +46,14 @@ namespace Tournament.Data.Repositories
             _context.TournamentDetails.Remove(tournament);
         }
 
-        public Task<TournamentDetails> GetByIdAsync(int id)
+        public async Task<TournamentDetails> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.TournamentDetails.FindAsync(id);
         }
 
-        public Task<bool> ExistsAsync(int id)
+        public async Task<bool> ExistsAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.TournamentDetails.AnyAsync(t => t.Id == id);
         }
 
     }
