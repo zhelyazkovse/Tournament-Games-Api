@@ -8,7 +8,7 @@ namespace Tournament.Api
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async  Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<TournamentApiContext>(options =>
@@ -37,7 +37,7 @@ namespace Tournament.Api
 
             app.UseAuthorization();
 
-            app.SeedDataAsync().GetAwaiter();
+            await app.SeedDataAsync();
             app.MapControllers();
 
             app.Run();
