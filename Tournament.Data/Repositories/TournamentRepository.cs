@@ -16,7 +16,9 @@ namespace Tournament.Data.Repositories
 
         public async Task<IEnumerable<TournamentDetails>> GetAllAsync()
         {
-            return await _context.TournamentDetails.ToListAsync();
+            return await _context.TournamentDetails
+                .Include(t => t.Games)
+                .ToListAsync();
         }
 
         public async Task<TournamentDetails> GetAsync(int id)
@@ -48,7 +50,9 @@ namespace Tournament.Data.Repositories
 
         public async Task<TournamentDetails> GetByIdAsync(int id)
         {
-            return await _context.TournamentDetails.FindAsync(id);
+            return await _context.TournamentDetails
+                .Include(t => t.Games)
+                .FirstOrDefaultAsync(t => t.Id == id);
         }
 
         public async Task<bool> ExistsAsync(int id)
