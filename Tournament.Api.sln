@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Api", "Tournament.Api\Tournament.Api.csproj", "{1B28868D-BFCD-40E5-9472-5BFDAD1F58D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Core", "Tournament.Core\Tournament.Core.csproj", "{9FDBD6E9-35CE-47AF-BE1C-41878CFE203F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Data", "Tournament.Data\Tournament.Data.csproj", "{FD11C1EC-AB8A-42CB-B360-511E4917602E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Services", "Tournament.Services\Tournament.Services.csproj", "{19B16A88-91B4-4A81-AF85-B773EE256BC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{FD11C1EC-AB8A-42CB-B360-511E4917602E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD11C1EC-AB8A-42CB-B360-511E4917602E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD11C1EC-AB8A-42CB-B360-511E4917602E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

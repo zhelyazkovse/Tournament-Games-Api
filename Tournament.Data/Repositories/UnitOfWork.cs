@@ -9,12 +9,15 @@ namespace Tournament.Data.Repositories
 
         public ITournamentRepository TournamentRepository { get; }
         public IGameRepository GameRepository { get; }
+        public IPlayerRepository PlayerRepository { get; }
 
         public UnitOfWork(TournamentApiContext context)
         {
             _context = context;
+
             TournamentRepository = new TournamentRepository(_context);
             GameRepository = new GameRepository(_context);
+            PlayerRepository = new PlayerRepository(_context);
         }
 
         public async Task CompleteAsync()

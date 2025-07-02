@@ -5,6 +5,7 @@ namespace Tournament.Core.Repositories
     {
         ITournamentRepository TournamentRepository { get; }
         IGameRepository GameRepository { get; }
+        IPlayerRepository PlayerRepository { get; }
 
         Task CompleteAsync();
     }
