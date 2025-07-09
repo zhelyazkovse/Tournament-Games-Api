@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Tournament.Core.DTOs;
 using Tournament.Core.Entities;
 using Tournament.Core.Repositories;
 
@@ -33,8 +34,13 @@ namespace Tournament.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Player>> PostPlayer(Player player)
+        public async Task<ActionResult<Player>> PostPlayer([FromBody] PlayerDto playerDto)
         {
+            var player = new Player {
+                Name = playerDto.Name,
+                Age = playerDto.Age,
+            };
+
             await _unitOfWork.PlayerRepository.AddAsync(player);
             await _unitOfWork.CompleteAsync();
 
