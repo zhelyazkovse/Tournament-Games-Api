@@ -8,14 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.0" />
-    <PackageReference Include="SendGrid" Version="9.29.3" />
-    <PackageReference Include="Volo.Abp.Core" Version="9.2.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj" />
     <ProjectReference Include="..\Tournament.Core\Tournament.Core.csproj" />
-    <ProjectReference Include="..\Tournament.Data\Tournament.Data.csproj" />
   </ItemGroup>
 
 </Project>

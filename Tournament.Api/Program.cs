@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Service.Contracts;
 using Tournament.Api.Data;
 using Tournament.Api.Extensions;
 using Tournament.Core.Repositories;
 using Tournament.Data.Repositories;
+using Tournament.Services;
 
 namespace Tournament.Api
 {
@@ -27,6 +29,8 @@ namespace Tournament.Api
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
             builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+            builder.Services.AddScoped<IServiceManager, ServiceManager>();
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             var app = builder.Build();
 

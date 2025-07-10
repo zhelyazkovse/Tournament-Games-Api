@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tournament.Core.Entities;
 using Tournament.Core.Repositories;
 
+
 namespace Tournament.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -18,9 +19,11 @@ namespace Tournament.Api.Controllers
 
         // GET: api/TournamentDetails
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TournamentDetails>>> GetTournamentDetails()
+        public async Task<ActionResult<IEnumerable<TournamentDetails>>> GetTournamentDetails(
+    [FromQuery] int page = 1,
+    [FromQuery] int pageSize = 10)
         {
-            var list = await _unitOfWork.TournamentRepository.GetAllAsync();
+            var list = await _unitOfWork.TournamentRepository.GetAllAsync(page, pageSize);
             return Ok(list);
         }
 

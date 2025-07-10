@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Data", "Tourname
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.Services", "Tournament.Services\Tournament.Services.csproj", "{19B16A88-91B4-4A81-AF85-B773EE256BC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{A1F1F657-3CB8-4DDD-99FB-D00AED54BDD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19B16A88-91B4-4A81-AF85-B773EE256BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1F1F657-3CB8-4DDD-99FB-D00AED54BDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F1F657-3CB8-4DDD-99FB-D00AED54BDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F1F657-3CB8-4DDD-99FB-D00AED54BDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F1F657-3CB8-4DDD-99FB-D00AED54BDD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

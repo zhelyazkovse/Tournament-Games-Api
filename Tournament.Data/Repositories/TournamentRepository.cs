@@ -14,10 +14,12 @@ namespace Tournament.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<TournamentDetails>> GetAllAsync()
+        public async Task<IEnumerable<TournamentDetails>> GetAllAsync(int page, int pageSize)
         {
             return await _context.TournamentDetails
                 .Include(t => t.Games)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync();
         }
 
@@ -58,6 +60,10 @@ namespace Tournament.Data.Repositories
         public async Task<bool> ExistsAsync(int id)
         {
             return await _context.TournamentDetails.AnyAsync(t => t.Id == id);
+        }
+        public async Task<int> CountAsync()
+        {
+            return await _context.TournamentDetails.CountAsync();
         }
 
     }
